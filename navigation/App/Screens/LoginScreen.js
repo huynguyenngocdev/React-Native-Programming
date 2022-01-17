@@ -28,7 +28,7 @@ export default () => {
         name: acc.name,
         email: acc.email,
         employed: acc.employed,
-      }
+      };
       signIn(user);
     } else {
       setErrorEmail(true);
@@ -74,9 +74,7 @@ export default () => {
           onChangeText={(text) => setEmail(text)}
         />
         {isErrorEmail && <Text style={styles.error}>Email is invalid.</Text>}
-      </KeyboardAwareScrollView>
 
-      <>
         <Text style={styles.inputLabel}>Password</Text>
         <TextInput
           style={styles.inputStyle}
@@ -88,7 +86,7 @@ export default () => {
         {isErrorPassword && (
           <Text style={styles.error}>Password is invalid.</Text>
         )}
-      </>
+      </KeyboardAwareScrollView>
       <View style={styles.leftText}>
         <Text>Forgot your password?</Text>
       </View>

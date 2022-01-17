@@ -4,7 +4,7 @@ import LoginScreen from "./Screens/LoginScreen";
 import MainScreen from "./Screens/MainScreen";
 
 const App = () => {
-  const [isLoggedIn, setLoggedIn] = React.useState(false);
+  const [isLoggedIn, setLoggedIn] = React.useState(true);
   const [currentUser, setCurrentUser] = React.useState(null);
 
   const authContext = React.useMemo(() => {
@@ -23,11 +23,7 @@ const App = () => {
 
   return (
     <AuthContext.Provider value={authContext}>
-        {!isLoggedIn ? (
-          <LoginScreen />
-        ) : (
-          <MainScreen/>
-        )}
+      {!isLoggedIn ? <LoginScreen /> : <MainScreen />}
     </AuthContext.Provider>
   );
 };
